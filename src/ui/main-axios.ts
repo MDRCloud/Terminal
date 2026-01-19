@@ -141,20 +141,20 @@ export function isElectron(): boolean {
   const hasISElectron =
     (
       window as Window &
-        typeof globalThis & {
-          IS_ELECTRON?: boolean;
-          electronAPI?: unknown;
-          configuredServerUrl?: string;
-        }
-    ).IS_ELECTRON === true;
-
-  const hasElectronAPI = !!(
-    window as Window &
       typeof globalThis & {
         IS_ELECTRON?: boolean;
         electronAPI?: unknown;
         configuredServerUrl?: string;
       }
+    ).IS_ELECTRON === true;
+
+  const hasElectronAPI = !!(
+    window as Window &
+    typeof globalThis & {
+      IS_ELECTRON?: boolean;
+      electronAPI?: unknown;
+      configuredServerUrl?: string;
+    }
   ).electronAPI;
 
   const result = hasISElectron || hasElectronAPI;
@@ -190,9 +190,9 @@ if (isElectron()) {
     try {
       const electronAPI = (
         window as Window &
-          typeof globalThis & {
-            electronAPI?: any;
-          }
+        typeof globalThis & {
+          electronAPI?: any;
+        }
       ).electronAPI;
 
       if (electronAPI?.getSetting) {
@@ -220,9 +220,9 @@ export function setCookie(name: string, value: string, days = 7): void {
 
       const electronAPI = (
         window as Window &
-          typeof globalThis & {
-            electronAPI?: any;
-          }
+        typeof globalThis & {
+          electronAPI?: any;
+        }
       ).electronAPI;
 
       if (electronAPI?.setSetting) {
@@ -325,7 +325,7 @@ function createApiInstance(
           platform = "iOS";
         }
       }
-      config.headers["User-Agent"] = `Termix-Mobile/${platform}`;
+      config.headers["User-Agent"] = `MDRCloud-Terminal-Mobile/${platform}`;
     }
 
     return config;
@@ -492,11 +492,11 @@ export async function getServerConfig(): Promise<ServerConfig | null> {
   try {
     const result = await (
       window as Window &
-        typeof globalThis & {
-          IS_ELECTRON?: boolean;
-          electronAPI?: unknown;
-          configuredServerUrl?: string;
-        }
+      typeof globalThis & {
+        IS_ELECTRON?: boolean;
+        electronAPI?: unknown;
+        configuredServerUrl?: string;
+      }
     ).electronAPI?.invoke("get-server-config");
     return result;
   } catch (error) {
@@ -511,21 +511,21 @@ export async function saveServerConfig(config: ServerConfig): Promise<boolean> {
   try {
     const result = await (
       window as Window &
-        typeof globalThis & {
-          IS_ELECTRON?: boolean;
-          electronAPI?: unknown;
-          configuredServerUrl?: string;
-        }
+      typeof globalThis & {
+        IS_ELECTRON?: boolean;
+        electronAPI?: unknown;
+        configuredServerUrl?: string;
+      }
     ).electronAPI?.invoke("save-server-config", config);
     if (result?.success) {
       configuredServerUrl = config.serverUrl;
       (
         window as Window &
-          typeof globalThis & {
-            IS_ELECTRON?: boolean;
-            electronAPI?: unknown;
-            configuredServerUrl?: string;
-          }
+        typeof globalThis & {
+          IS_ELECTRON?: boolean;
+          electronAPI?: unknown;
+          configuredServerUrl?: string;
+        }
       ).configuredServerUrl = configuredServerUrl;
       updateApiInstances();
       return true;
@@ -546,11 +546,11 @@ export async function testServerConnection(
   try {
     const result = await (
       window as Window &
-        typeof globalThis & {
-          IS_ELECTRON?: boolean;
-          electronAPI?: unknown;
-          configuredServerUrl?: string;
-        }
+      typeof globalThis & {
+        IS_ELECTRON?: boolean;
+        electronAPI?: unknown;
+        configuredServerUrl?: string;
+      }
     ).electronAPI?.invoke("test-server-connection", serverUrl);
     return result;
   } catch (error) {
@@ -581,11 +581,11 @@ export async function checkElectronUpdate(): Promise<{
   try {
     const result = await (
       window as Window &
-        typeof globalThis & {
-          IS_ELECTRON?: boolean;
-          electronAPI?: unknown;
-          configuredServerUrl?: string;
-        }
+      typeof globalThis & {
+        IS_ELECTRON?: boolean;
+        electronAPI?: unknown;
+        configuredServerUrl?: string;
+      }
     ).electronAPI?.invoke("check-electron-update");
     return result;
   } catch (error) {
@@ -677,11 +677,11 @@ function initializeApp() {
           configuredServerUrl = config.serverUrl;
           (
             window as Window &
-              typeof globalThis & {
-                IS_ELECTRON?: boolean;
-                electronAPI?: unknown;
-                configuredServerUrl?: string;
-              }
+            typeof globalThis & {
+              IS_ELECTRON?: boolean;
+              electronAPI?: unknown;
+              configuredServerUrl?: string;
+            }
           ).configuredServerUrl = configuredServerUrl;
         } else {
           console.warn("No server URL in config");
@@ -716,11 +716,11 @@ function updateApiInstances() {
 
   (
     window as Window &
-      typeof globalThis & {
-        IS_ELECTRON?: boolean;
-        electronAPI?: unknown;
-        configuredServerUrl?: string;
-      }
+    typeof globalThis & {
+      IS_ELECTRON?: boolean;
+      electronAPI?: unknown;
+      configuredServerUrl?: string;
+    }
   ).configuredServerUrl = configuredServerUrl;
 
   systemLogger.success("All API instances updated successfully", {
@@ -835,7 +835,7 @@ function handleApiError(error: unknown, operation: string): never {
           errorContext,
         );
         throw new ApiError(
-          "No server configured. Please configure a Termix server first.",
+          "No server configured. Please configure an MDRCloud Terminal server first.",
           0,
           "NO_SERVER_CONFIGURED",
         );

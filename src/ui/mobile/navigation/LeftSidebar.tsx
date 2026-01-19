@@ -184,7 +184,7 @@ export function LeftSidebar({
         <Sidebar>
           <SidebarHeader>
             <SidebarGroupLabel className="text-lg font-bold text-foreground">
-              Termix
+              MDRCloud Terminal
               <Button
                 variant="outline"
                 onClick={() => setIsSidebarOpen(!isSidebarOpen)}

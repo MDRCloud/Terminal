@@ -1,6 +1,6 @@
 {
-  "appId": "com.karmaa.termix",
-  "productName": "Termix",
+  "appId": "com.mdrcloud.terminal",
+  "productName": "MDRCloud Terminal",
   "publish": null,
   "directories": {
     "output": "release"
@@ -16,7 +16,9 @@
     "!vite.config.ts",
     "!eslint.config.js"
   ],
-  "asarUnpack": ["node_modules/node-fetch/**/*"],
+  "asarUnpack": [
+    "node_modules/node-fetch/**/*"
+  ],
   "extraMetadata": {
     "main": "electron/main.cjs"
   },
@@ -27,64 +29,81 @@
     "target": [
       {
         "target": "nsis",
-        "arch": ["x64", "ia32"]
+        "arch": [
+          "x64",
+          "ia32"
+        ]
       },
       {
         "target": "msi",
-        "arch": ["x64", "ia32"]
+        "arch": [
+          "x64",
+          "ia32"
+        ]
       }
     ],
     "icon": "public/icon.ico",
-    "executableName": "Termix"
+    "executableName": "MDRCloud-Terminal"
   },
   "nsis": {
     "oneClick": false,
     "allowToChangeInstallationDirectory": true,
-    "artifactName": "termix_windows_${arch}_nsis.${ext}",
+    "artifactName": "mdrcloud-terminal_windows_${arch}_nsis.${ext}",
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "Termix",
-    "uninstallDisplayName": "Termix"
+    "shortcutName": "MDRCloud Terminal",
+    "uninstallDisplayName": "MDRCloud Terminal"
   },
   "msi": {
-    "artifactName": "termix_windows_${arch}_msi.${ext}"
+    "artifactName": "mdrcloud-terminal_windows_${arch}_msi.${ext}"
   },
   "linux": {
-    "artifactName": "termix_linux_${arch}_portable.${ext}",
+    "artifactName": "mdrcloud-terminal_linux_${arch}_portable.${ext}",
     "target": [
       {
         "target": "AppImage",
-        "arch": ["x64", "arm64", "armv7l"]
+        "arch": [
+          "x64",
+          "arm64",
+          "armv7l"
+        ]
       },
       {
         "target": "deb",
-        "arch": ["x64", "arm64", "armv7l"]
+        "arch": [
+          "x64",
+          "arm64",
+          "armv7l"
+        ]
       },
       {
         "target": "tar.gz",
-        "arch": ["x64", "arm64", "armv7l"]
+        "arch": [
+          "x64",
+          "arm64",
+          "armv7l"
+        ]
       }
     ],
     "icon": "public/icon.png",
     "category": "Development",
-    "executableName": "termix",
-    "maintainer": "Termix <mail@termix.site>",
+    "executableName": "mdrcloud-terminal",
+    "maintainer": "MDRCloud <support@mdrcloud.com>",
     "desktop": {
       "entry": {
-        "Name": "Termix",
-        "Comment": "A web-based server management platform",
-        "Keywords": "terminal;ssh;server;management;",
-        "StartupWMClass": "termix"
+        "Name": "MDRCloud Terminal",
+        "Comment": "MDRCloud Terminal - Web-based server management platform",
+        "Keywords": "terminal;ssh;server;management;mdrcloud;",
+        "StartupWMClass": "mdrcloud-terminal"
       }
     }
   },
   "appImage": {
-    "artifactName": "termix_linux_${arch}_appimage.${ext}"
+    "artifactName": "mdrcloud-terminal_linux_${arch}_appimage.${ext}"
   },
   "deb": {
-    "artifactName": "termix_linux_${arch}_deb.${ext}"
+    "artifactName": "mdrcloud-terminal_linux_${arch}_deb.${ext}"
   },
-
   "mac": {
     "target": [
       {
@@ -93,7 +112,11 @@
       },
       {
         "target": "dmg",
-        "arch": ["universal", "x64", "arm64"]
+        "arch": [
+          "universal",
+          "x64",
+          "arm64"
+        ]
       }
     ],
     "icon": "public/icon.icns",
@@ -106,23 +129,25 @@
     "minimumSystemVersion": "10.15"
   },
   "dmg": {
-    "artifactName": "termix_macos_${arch}_dmg.${ext}",
+    "artifactName": "mdrcloud-terminal_macos_${arch}_dmg.${ext}",
     "sign": true
   },
   "afterSign": "build/notarize.cjs",
   "mas": {
-    "provisioningProfile": "build/Termix_Mac_App_Store.provisionprofile",
+    "provisioningProfile": "build/MDRCloud_Terminal_Mac_App_Store.provisionprofile",
     "entitlements": "build/entitlements.mas.plist",
     "entitlementsInherit": "build/entitlements.mas.inherit.plist",
     "hardenedRuntime": false,
     "gatekeeperAssess": false,
-    "asarUnpack": ["**/*.node"],
+    "asarUnpack": [
+      "**/*.node"
+    ],
     "type": "distribution",
     "category": "public.app-category.developer-tools",
-    "artifactName": "termix_macos_${arch}_mas.${ext}",
+    "artifactName": "mdrcloud-terminal_macos_${arch}_mas.${ext}",
     "extendInfo": {
       "ITSAppUsesNonExemptEncryption": false,
-      "NSAppleEventsUsageDescription": "Termix needs access to control other applications for terminal operations."
+      "NSAppleEventsUsageDescription": "MDRCloud Terminal needs access to control other applications for terminal operations."
     }
   },
   "generateUpdatesFilesForAllChannels": true

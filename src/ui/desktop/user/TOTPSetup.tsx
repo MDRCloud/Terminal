@@ -142,7 +142,7 @@ export function TOTPSetup({
 
   const downloadBackupCodes = () => {
     const content =
-      `Termix Two-Factor Authentication Backup Codes\n` +
+      `MDRCloud Terminal Two-Factor Authentication Backup Codes\n` +
       `Generated: ${new Date().toISOString()}\n\n` +
       `Keep these codes in a safe place. Each code can only be used once.\n\n` +
       backupCodes.map((code, i) => `${i + 1}. ${code}`).join("\n");

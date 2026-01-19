@@ -1,9 +1,9 @@
 {
-  "name": "termix",
+  "name": "mdrcloud-terminal",
   "private": true,
   "version": "1.10.0",
-  "description": "A web-based server management platform with SSH terminal, tunneling, and file editing capabilities",
-  "author": "Karmaa",
+  "description": "MDRCloud Terminal - A web-based server management platform with SSH terminal, tunneling, and file editing capabilities",
+  "author": "MDRCloud",
   "main": "electron/main.cjs",
   "type": "module",
   "scripts": {

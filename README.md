@@ -1,20 +1,9 @@
-# Repo Stats
+# MDRCloud Terminal
 
-<p align="center">
-  <img src="https://flagcdn.com/us.svg" alt="English" width="24" height="16"> English | 
-  <a href="README-CN.md"><img src="https://flagcdn.com/cn.svg" alt="中文" width="24" height="16"> 中文</a>
-</p>
+[![MDRCloud](https://img.shields.io/badge/MDRCloud-Terminal-3B4A98?style=flat-square&logo=cloud&logoColor=white)](#)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](#)
 
-![GitHub Repo stars](https://img.shields.io/github/stars/Termix-SSH/Termix?style=flat&label=Stars)
-![GitHub forks](https://img.shields.io/github/forks/Termix-SSH/Termix?style=flat&label=Forks)
-![GitHub Release](https://img.shields.io/github/v/release/Termix-SSH/Termix?style=flat&label=Release)
-<a href="https://discord.gg/jVQGdvHDrf"><img alt="Discord" src="https://img.shields.io/discord/1347374268253470720"></a>
-
-<p align="center">
-  <img src="./repo-images/RepoOfTheDay.png" alt="Repo of the Day Achievement" style="width: 300px; height: auto;">
-  <br>
-  <small style="color: #666;">Achieved on September 1st, 2025</small>
-</p>
+> **Based on [Termix](https://github.com/Termix-SSH/Termix)** - An open-source SSH terminal and server management platform
 
 #### Top Technologies
 
@@ -27,26 +16,15 @@
 [![SQLite Badge](https://img.shields.io/badge/-SQLite-003B57?style=flat-square&labelColor=black&logo=sqlite&logoColor=003B57)](#)
 [![Radix UI Badge](https://img.shields.io/badge/-Radix%20UI-161618?style=flat-square&labelColor=black&logo=radixui&logoColor=161618)](#)
 
-<br />
-<p align="center">
-  <a href="https://github.com/Termix-SSH/Termix">
-    <img alt="Termix Banner" src=./repo-images/HeaderImage.png style="width: auto; height: auto;">  </a>
-</p>
 
-If you would like, you can support the project here!\
-[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-LukeGus-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sponsors/LukeGus)
 
-# Overview
+# MDRCloud Terminal
 
-<p align="center">
-  <a href="https://github.com/Termix-SSH/Termix">
-    <img alt="Termix Banner" src=./public/icon.svg style="width: 250px; height: 250px;">  </a>
-</p>
+**MDRCloud Terminal** is an open-source, self-hosted all-in-one server management platform based on Termix. It provides a multi-platform
+solution for managing your servers and infrastructure through a single, intuitive interface. MDRCloud Terminal offers SSH terminal
+access, SSH tunneling capabilities, remote file management, and many other tools.
 
-Termix is an open-source, forever-free, self-hosted all-in-one server management platform. It provides a multi-platform
-solution for managing your servers and infrastructure through a single, intuitive interface. Termix offers SSH terminal
-access, SSH tunneling capabilities, remote file management, and many other tools. Termix is the perfect
-free and self-hosted alternative to Termius available for all platforms.
+> **Note:** This is a rebranded version of [Termix](https://github.com/Termix-SSH/Termix) for MDRCloud.
 
 # Features
 
