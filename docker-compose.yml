@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  mdrcloud-terminal:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: mdrcloud-terminal
+    restart: unless-stopped
+    ports:
+      - "8080:8080"      # Web frontend
+      - "30001:30001"    # Main API & Auth
+      - "30002:30002"    # Reserved
+      - "30003:30003"    # Tunnel Management
+      - "30004:30004"    # File Manager
+      - "30005:30005"    # Server Statistics
+      - "30006:30006"    # Homepage API
+      - "30007:30007"    # Docker Management
+    volumes:
+      - mdrcloud-data:/app/data
+      - mdrcloud-uploads:/app/uploads
+    environment:
+      - PORT=8080
+      - DATA_DIR=/app/data
+      - NODE_ENV=production
+    networks:
+      - mdrcloud-network
+
+volumes:
+  mdrcloud-data:
+    driver: local
+  mdrcloud-uploads:
+    driver: local
+
+networks:
+  mdrcloud-network:
+    driver: bridge
